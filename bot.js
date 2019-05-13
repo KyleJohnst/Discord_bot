@@ -9,7 +9,7 @@ logger.level = 'debug';
 // Initialize Discord Bot
 const bot = new Discord.Client
 
-bot.token(process.env.BOT_TOKEN)
+bot.token.login(process.env.BOT_TOKEN)
 
 bot.on('ready', function (evt) {
     logger.info('Logged in as: MR ROBOTO');
