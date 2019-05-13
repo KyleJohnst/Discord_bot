@@ -1,5 +1,5 @@
-var Discord = require('discord.io');
-var logger = require('winston');
+const Discord = require('discord.io');
+const logger = require('winston');
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -7,9 +7,10 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';
 // Initialize Discord Bot
-var bot = new Discord.Client({
-    token: process.env.BOT_TOKEN
-});
+const bot = new Discord.Client
+
+bot.login(process.env.BOT_TOKEN)
+
 bot.on('ready', function (evt) {
     logger.info('Logged in as: MR ROBOTO');
     logger.info('BOT is now running');
