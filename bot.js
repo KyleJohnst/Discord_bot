@@ -13,9 +13,9 @@ var bot = new Discord.Client({
     autorun: true
 });
 bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+    logger.info('Logged in as: MR ROBOTO');
+    logger.info('BOT is now running');
+
 });
 
 const choices = [
