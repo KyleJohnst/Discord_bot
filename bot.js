@@ -41,10 +41,9 @@ const choices = [
     }
 ]
 
+// Checks who the winner is
 function playGame(hand){
     let compHand = randomHand();
-    // let defeat = compHand.defeats.includes(hand)
-    // return defeat + compHand.name
         if (hand === compHand.name) {
             return `Draw! Your choice of ${hand} and MR ROBOTO's ${compHand.name} drew`;
         } else if (compHand.defeats.includes(hand)) {
@@ -54,6 +53,7 @@ function playGame(hand){
         }
 };
 
+// Gives MR ROBOTO a hand at random
 function randomHand(){
     const i = Math.floor(Math.random() * 5);
     let compHand = choices[i];
@@ -91,7 +91,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: "The Rules to the game are as follows: Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, (and as it always has) Rock crushes Scissors"
                 });
                 break;
-
+            // !choices returns your hand choices
                 case 'choices':
                 bot.sendMessage({
                     to: channelID,
