@@ -1,6 +1,6 @@
 const Discord = require('discord.io');
 const logger = require('winston');
-const token = process.env.token;
+const botToken = process.env.token;
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -8,14 +8,17 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';
 // Initialize Discord Bot
-const bot = new Discord.Client()
+const bot = new Discord.Client({
+    token: botToken,
+    autorun: true
+})
 
 bot.on('ready', function (evt) {
     logger.info('Logged in as: MR ROBOTO');
     logger.info('BOT is now running');
 });
 
-bot.login(token).catch(err => console.log(err))
+
 
 const choices = [
     {
