@@ -10,6 +10,7 @@ To install dependencies.<br/>
 <br/>
 Then start the bot in console<br/>
 ```node bot.js``` <br/>
+<br/>
 Now head over to your server and say ```!hi```<br/>
 
 ### Commands in Discord
